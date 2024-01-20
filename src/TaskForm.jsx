@@ -19,7 +19,6 @@ function TaskForm({ onTaskCreate }) {
           priority,
       };
 
-      // Callback to pass the new task up to the parent component
       onTaskCreate(newTask);
 
       // Clear the form fields
