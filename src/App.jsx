@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import './App.css'
+import { useState } from 'react'
 import { useEffect } from 'react';
 import TaskList from './TaskList';
 import TaskForm from './TaskForm';
@@ -13,12 +13,11 @@ function App() {
   };
   return(
     <div>
-      {
-      /*
       <TaskForm onTaskCreate={handleTaskCreate} />
-      */
-      <TaskList></TaskList>
-      }
+      <br></br>
+      <br></br>
+      <br></br>
+      <TaskList tasks={tasks}></TaskList>
     </div>
   )
 

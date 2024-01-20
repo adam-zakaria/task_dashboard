@@ -2,21 +2,16 @@ import { useState } from 'react'
 import './App.css'
 import { useEffect } from 'react';
 
+/*
 let tasks = [
     {"id": 1, "taskName": "Task 1", "Description":"", "dueDate": "2024-01-25", "assignee":"", "priority": "High"},
     {"id": 2, "taskName": "Task 1", "Description":"", "dueDate": "2024-01-25", "assignee":"", "priority": "High"},
     {"id": 3, "taskName": "Task 1", "Description":"", "dueDate": "2024-01-25", "assignee":"", "priority": "High"},
     {"id": 4, "taskName": "Task 1", "Description":"", "dueDate": "2024-01-25", "assignee":"", "priority": "High"},
 ]
-/*
-• Task name (required)
-• Description
-• Due date (required)
-• Assignee (required)
-• Priority (required)
 */
 
-function TaskList(){
+function TaskList({tasks}){
   return(
     <div>
     <h1>Tasks</h1>
