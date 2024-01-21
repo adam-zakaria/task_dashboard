@@ -1,5 +1,4 @@
-# Demos
-## Task creation
+# Demo
 ![Task creation](https://github.com/adam-zakaria/task_dashboard/blob/main/public/demo_gifs/create_tasks_lower.gif "Task creation")
 
 # Setup and run application
