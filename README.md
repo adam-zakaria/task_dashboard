@@ -2,13 +2,11 @@
 ## Task creation
 ![Task creation](https://github.com/adam-zakaria/task_dashboard/blob/main/public/demo_gifs/create_tasks_lower.gif "Task creation")
 
-# Setup
+# Setup and run application
 Install npm using your platform's package manager or however you please.
 
-## Install packages
+`git clone git@github.com:adam-zakaria/task_dashboard.git`
 `npm i`
-
-## Run
 `npm run dev`
 
 # Design Decisions
