@@ -1,6 +1,6 @@
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Task creation")
+![Task creation](https://github.com/adam-zakaria/task_dashboard/blob/main/public/demo_gifs/create%20tasks.gif "Task creation")
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Error handling")
+![Error handling](https://github.com/adam-zakaria/task_dashboard/blob/main/public/demo_gifs/error%20handling.gif "Error handling")
 
 # Demos
 ## Task creation
