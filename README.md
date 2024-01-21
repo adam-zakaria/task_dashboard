@@ -7,8 +7,6 @@ This assumes npm is installed.
 ## Run
 `npm run dev`
 
-# COMMENTS!!!
-
 # Design Decisions
 
 ## Frameworks, libraries, and tools
