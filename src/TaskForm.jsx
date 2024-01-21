@@ -83,7 +83,7 @@ function TaskForm({ onTaskCreate }) {
               required
               fullWidth
             />
-            <FormControl fullWidth>
+            <FormControl required fullWidth>
               <InputLabel id="priority-label">Priority</InputLabel>
               <Select
                 labelId="priority-label"
@@ -96,7 +96,7 @@ function TaskForm({ onTaskCreate }) {
                 <MenuItem value="Low">Low</MenuItem>
               </Select>
             </FormControl>
-            <FormControl fullWidth>
+            <FormControl required fullWidth>
               <InputLabel id="status-label">Status</InputLabel>
               <Select
                 labelId="status-label"
