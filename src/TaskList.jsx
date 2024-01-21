@@ -15,14 +15,14 @@ function TaskList({ tasks }) {
 
   return (
     <div className="flex flex-col items-center">
-<Typography
-  variant="h4"
-  component="h1"
-  className="my-4"
-  sx={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}
->
-  Tasks
-</Typography>
+      <Typography
+        variant="h4"
+        component="h1"
+        className="my-4"
+        sx={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}
+      >
+        Tasks
+      </Typography>
       <div className="w-full">
         {tasks.map(task => (
           <Card onClick={() => toggleTaskDetail(task.id)} key={task.id} className="mb-4" elevation={1}>
@@ -35,11 +35,11 @@ function TaskList({ tasks }) {
                 {task.name}
               </Typography>
               <Typography variant="body1">
-        <span style={labelStyle}>Due:</span> {task.dueDate}
-      </Typography>
-      <Typography variant="body1">
-        <span style={labelStyle}>Priority:</span> {task.priority}
-      </Typography>
+                <span style={labelStyle}>Due:</span> {task.dueDate}
+              </Typography>
+              <Typography variant="body1">
+                <span style={labelStyle}>Priority:</span> {task.priority}
+              </Typography>
 
               {displayedDetails[task.id] && <TaskDetail task={task} />}
             </CardContent>

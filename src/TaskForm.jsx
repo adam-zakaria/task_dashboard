@@ -6,31 +6,30 @@ function TaskForm({ onTaskCreate }) {
   const [description, setDescription] = useState('');
   const [dueDate, setDueDate] = useState('');
   const [assignee, setAssignee] = useState('');
-  const [priority, setPriority] = useState('Medium'); // Default priority
-  const [status, setStatus] = useState('Not Started'); // Default status
+  const [priority, setPriority] = useState('Medium');
+  const [status, setStatus] = useState('Not Started');
 
   const handleSubmit = (event) => {
-      event.preventDefault();
+    event.preventDefault();
 
-      // Construct the new task object
-      const newTask = {
-          name: taskName,
-          description,
-          dueDate,
-          assignee,
-          priority,
-          status,
-      };
+    const newTask = {
+      name: taskName,
+      description,
+      dueDate,
+      assignee,
+      priority,
+      status,
+    };
 
-      onTaskCreate(newTask);
+    onTaskCreate(newTask);
 
-      // Clear the form fields
-      setTaskName('');
-      setDescription('');
-      setDueDate('');
-      setAssignee('');
-      setPriority('Medium');
-      setStatus('Not Started');
+    // Clear the form fields
+    setTaskName('');
+    setDescription('');
+    setDueDate('');
+    setAssignee('');
+    setPriority('Medium');
+    setStatus('Not Started');
   };
 
   return (

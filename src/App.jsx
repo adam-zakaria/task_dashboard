@@ -5,8 +5,7 @@ import { Grid } from '@mui/material';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AppBar, Toolbar, Card, CardContent, Button, Typography } from '@mui/material';
-import AssignmentIcon from '@mui/icons-material/Assignment'; // An example icon
-
+import AssignmentIcon from '@mui/icons-material/Assignment';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -15,7 +14,6 @@ function App() {
       // Assign a unique ID (for simplicity, using Date.now(), but consider uuid in real apps)
       const taskWithId = { ...newTask, id: Date.now() };
 
-      // Add the new task to the existing tasks
       setTasks(prevTasks => [...prevTasks, taskWithId]);
   };
 
