@@ -5,9 +5,11 @@
 # Setup and run application
 Install npm using your platform's package manager or however you please.
 
-`git clone git@github.com:adam-zakaria/task_dashboard.git`
-`npm i`
-`npm run dev`
+```
+git clone git@github.com:adam-zakaria/task_dashboard.git
+npm i
+npm run dev
+```
 
 # Design Decisions
 
