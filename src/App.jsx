@@ -1,7 +1,10 @@
-// App.js
 import React, { useState } from 'react';
-import TaskList from './TaskList';
 import TaskForm from './TaskForm';
+import TaskList from './TaskList';
+import { Grid } from '@mui/material';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import { Card, CardContent, Button, Typography } from '@mui/material';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -15,11 +18,30 @@ function App() {
   };
 
   return (
-    <div>
-      <TaskForm onTaskCreate={handleTaskCreate} />
-      <br />
-      <TaskList tasks={tasks} />
-    </div>
+    <>
+      <CssBaseline />
+      <Box sx={{ flexGrow: 1, padding: 4 }}>
+        <Typography variant="h3" component="h1" gutterBottom className="mb-6">
+          Task Dashboard
+        </Typography>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={6}>
+            <Card>
+              <CardContent>
+                <TaskForm onTaskCreate={handleTaskCreate} />
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Card style={{ height: 'calc(100vh - 96px)', overflow: 'auto' }}> {/* Adjust height as needed */}
+              <CardContent>
+                <TaskList tasks={tasks} />
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      </Box>
+    </>
   );
 }
 
