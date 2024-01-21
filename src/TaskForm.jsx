@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Card, CardContent, TextField, TextareaAutosize, Select, MenuItem, Button, FormControl, InputLabel } from '@mui/material';
+
+
 function TaskForm({ onTaskCreate }) {
 
   const [taskName, setTaskName] = useState('');
@@ -28,68 +31,67 @@ function TaskForm({ onTaskCreate }) {
       setAssignee('');
       setPriority('Medium');
   };
-
-  return (
-      <form onSubmit={handleSubmit}>
-          <div>
-              <label>
-                  Task Name:
-                  <input 
-                      type="text" 
-                      value={taskName} 
-                      onChange={(e) => setTaskName(e.target.value)} 
-                      required 
-                  />
-              </label>
-          </div>
-          <div>
-              <label>
-                  Description:
-                  <textarea 
-                      value={description} 
-                      onChange={(e) => setDescription(e.target.value)} 
-                  />
-              </label>
-          </div>
-          <div>
-              <label>
-                  Due Date:
-                  <input 
-                      type="date" 
-                      value={dueDate} 
-                      onChange={(e) => setDueDate(e.target.value)} 
-                      required 
-                  />
-              </label>
-          </div>
-          <div>
-              <label>
-                  Assignee:
-                  <input 
-                      type="text" 
-                      value={assignee} 
-                      onChange={(e) => setAssignee(e.target.value)} 
-                      required 
-                  />
-              </label>
-          </div>
-          <div>
-              <label>
-                  Priority:
-                  <select 
-                      value={priority} 
-                      onChange={(e) => setPriority(e.target.value)} 
-                      required
-                  >
-                      <option value="High">High</option>
-                      <option value="Medium">Medium</option>
-                      <option value="Low">Low</option>
-                  </select>
-              </label>
-          </div>
-          <button type="submit">Create Task</button>
-      </form>
+return (
+<div className="flex justify-center items-center h-screen">
+      <Card className="w-1/3">
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <TextField 
+              label="Task Name" 
+              variant="outlined" 
+              value={taskName} 
+              onChange={(e) => setTaskName(e.target.value)} 
+              required 
+              fullWidth
+            />
+            <TextareaAutosize
+              minRows={3}
+              placeholder="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="w-full mt-1 p-2"
+            />
+            <TextField 
+              label="Due Date" 
+              type="date" 
+              value={dueDate} 
+              onChange={(e) => setDueDate(e.target.value)} 
+              required 
+              fullWidth
+              InputLabelProps={{ shrink: true }}
+            />
+            <TextField 
+              label="Assignee" 
+              variant="outlined" 
+              value={assignee} 
+              onChange={(e) => setAssignee(e.target.value)} 
+              required 
+              fullWidth
+            />
+            <FormControl fullWidth>
+              <InputLabel id="priority-label">Priority</InputLabel>
+              <Select
+                labelId="priority-label"
+                value={priority}
+                label="Priority"
+                onChange={(e) => setPriority(e.target.value)}
+              >
+                <MenuItem value="High">High</MenuItem>
+                <MenuItem value="Medium">Medium</MenuItem>
+                <MenuItem value="Low">Low</MenuItem>
+              </Select>
+            </FormControl>
+            <div className="flex justify-center mt-4">
+              <Button type="submit" variant="contained" color="primary">
+                Create Task
+              </Button>
+            </div>
+          </form>
+        </CardContent>
+      </Card>
+    </div>
   );
+
 }
 
 export default TaskForm;

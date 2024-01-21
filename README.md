@@ -69,3 +69,6 @@ Integration
 * Perform code reviews for all developed components.
 * Ensure coding standards, best practices, and project-specific guidelines are followed.
 * Address and resolve any issues or feedback from the reviews.
+
+
+## Backend Design
