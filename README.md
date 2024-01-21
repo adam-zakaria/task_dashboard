@@ -1,5 +1,5 @@
 # Setup
-This assumes npm is installed.
+Install npm using your platform's package manager or however you please.
 
 ## Install packages
 `npm i`
@@ -10,10 +10,10 @@ This assumes npm is installed.
 # Design Decisions
 
 ## Frameworks, libraries, and tools
-This project uses React (bootstrapped with Vite), Tailwind CSS, and Material UI. 
+This project uses React, Vite, Tailwind CSS, and Material UI. 
 
 ### React
-React is a very popular modern front end framework and is popular for a lot of reasons: tons of libraries, great templating language (JSX), modularity (components), performance, and a lot more. Because of its popularity, finding front end devs to work on React projects is very easy - there are a lot of React devs. 
+React is a very popular modern front end framework and is popular for a lot of reasons: a vast collection of libraries, great templating language (JSX), modularity (components), performance, and a lot more. Because of its popularity, finding front end devs to work on React projects is very easy - there are a lot of React devs. 
 
 ### Vite
 Vite and Create React App are two of the most popular ways to start and serve React project. Vite is *very* fast - when a change is made to the project Vite recompiles very quickly, a lot faster than CRA. 
@@ -27,7 +27,7 @@ Material UI provides wonderful out of the box components which include features 
 ## UI Considerations
 
 ### Color Palette
-I wanted to insure that there is at least *some* color, and Material UI's default components provide enough blue and gray that the aesthetic is enhacned. With more time, a more attractive and complex palette would be created.
+I wanted to insure that there is at least *some* color, and Material UI's default components effectively use color to direct the user's attention and provide enough blue and gray that the aesthetic is enhanced. With more time, a more attractive and complex palette would be created.
 
 ### Task List 
 There are a lot of ways to display tasks on the screen. We'll assume this is a desktop app and will ignore responsive design (mobile). With a project management tool like Jira, tasks may be organized in columns or rows by epic, sprint, assignee, etc. For simplicity, in this application tasks are displayed in a single panel as a scrollable list.
@@ -45,7 +45,7 @@ Response: Array of Task objects.
 
 * POST /tasks
 Description: Create a new task.
-Payload: Task object (without ID; typically includes name, description, dueDate, assignee, priority, status).
+Payload: Task object
 Response: Newly created Task object with ID.
 
 ## Work Breakdown: Development Phase
@@ -85,6 +85,9 @@ Also time estimates will vary depending on the familiarility of the developers w
 * Ensure coding standards, best practices, and project-specific guidelines are followed.
 * Address and resolve any issues or feedback from the reviews.
 * Time Estimate: 2 hours
+
+## Testing
+`npm test`
 
 ## Additional Notes
 * The assignment specifies that "Priority" should be included under Task Details, but does not specify its inclusion under Task Creation. I've decided to include it in Task Creation because it is important feature in a task system.

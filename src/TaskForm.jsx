@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Card, CardContent, TextField, TextareaAutosize, Select, MenuItem, Button, FormControl, InputLabel, Typography } from '@mui/material';
+import { Card, CardContent, TextField, TextareaAutosize, Select, MenuItem, Button, FormControl, InputLabel, Typography, OutlinedInput } from '@mui/material';
+
 
 function TaskForm({ onTaskCreate }) {
   const [taskName, setTaskName] = useState('');
@@ -53,13 +54,18 @@ function TaskForm({ onTaskCreate }) {
               required
               fullWidth
             />
-            <TextareaAutosize
-              minRows={3}
-              placeholder="Description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              className="w-full mt-1 p-2"
-            />
+            <FormControl variant="outlined" fullWidth className="mt-2">
+              <InputLabel htmlFor="task-description">Description</InputLabel>
+              <OutlinedInput
+                id="task-description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                multiline
+                rows={3}
+                placeholder="Description"
+                label="Description"
+              />
+            </FormControl>
             <TextField
               label="Due Date"
               type="date"
