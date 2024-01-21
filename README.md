@@ -16,40 +16,40 @@ npm run dev
 This project uses React, Vite, Tailwind CSS, and Material UI. 
 
 ### React
-React is a very popular modern front end framework and is popular for a lot of reasons: a vast collection of libraries, great templating language (JSX), modularity (components), performance, and a lot more. Because of its popularity, finding front end devs to work on React projects is very easy - there are a lot of React devs. 
+React is a very popular modern front-end framework and is popular for a lot of reasons: a vast collection of libraries, great templating language (JSX), modularity (components), performance, and a lot more. Because of its popularity, finding front-end developers to work on React projects is very easy - there are a lot of React developers. 
 
 ### Vite
 Vite and Create React App are two of the most popular ways to start and serve React project. Vite is *very* fast - when a change is made to the project Vite recompiles very quickly, a lot faster than CRA. 
 
 ### Tailwind CSS
-Tailwind CSS is lauded by devs for making styling so much faster and more convenient. Tailwind provides utility classes which allow devs to inline CSS and not need to switch between markup and style files. 
+Tailwind CSS is lauded by developers for making styling faster and more convenient. Tailwind provides utility classes which allow developers to inline CSS and not need to switch between markup and style files. 
 
 ### Material UI
-Material UI provides wonderful out of the box components which include features like accessibility, uniform styling, error handling on forms, and more. Like all the other tools, it is also very popular.
+Material UI provides wonderful out-of-the-box components which include features like accessibility, uniform styling, error handling on forms, and more. Like all the other tools, it is also very popular.
 
 ## UI Considerations
 
 ### Color Palette
-I wanted to insure that there is at least *some* color, and Material UI's default components effectively use color to direct the user's attention and provide enough blue and gray that the aesthetic is enhanced. With more time, a more attractive and complex palette would be created.
+I wanted to ensure that there is at least *some* color, and Material UI's default components effectively use color to direct the user's attention and provide enough blue and gray that the aesthetic is enhanced. With more time, a more attractive and complex palette would be created.
 
 ### Task List 
 There are a lot of ways to display tasks on the screen. We'll assume this is a desktop app and will ignore responsive design (mobile). With a project management tool like Jira, tasks may be organized in columns or rows by epic, sprint, assignee, etc. For simplicity, in this application tasks are displayed in a single panel as a scrollable list.
 
 ### Task creation
-I decided to create a task creation form that is always displayed on the screen. This option won out over the other options of having a separate page for task creation or having a "Add Task" button which would display a modal where a task can be created. The modal was a close second because it could be argued that the majority of time in a task dashboard is likely spent viewing tasks, so devoting more screen to the tasks could make sense, but I like the ever present task creation panel because tasks can be viewed mid-creation, and tasks are more conveniently made (no need to open a modal). If the requirements mentioned future development plans this would factor into the design, but no plans are mentioned.
+I decided to create a task creation form that is always displayed on the screen. This option won out over the other options of having a separate page for task creation or having an "Add Task" button which would display a modal where a task can be created. The modal was a close second because it could be argued that the majority of time in a task dashboard is likely spent viewing tasks, so devoting more screen to the tasks could make sense, but I like the ever present task creation panel because tasks can be viewed mid-creation, and tasks are more conveniently made (no need to open a modal). If the requirements mentioned future development plans this would factor into the design, but no plans are mentioned.
 
 ## Backend
 These are the endpoints required to support my current implementation. In a more fully developed implementation, there would be endpoints for functionality like updating, deleting, getting specific tasks based on criteria, etc.
 
 * GET /tasks
-Description: Retrieve a list of all tasks.
-Payload: None
-Response: Array of Task objects.
+  Description: Retrieve a list of all tasks.
+  Payload: None
+  Response: Array of Task objects.
 
 * POST /tasks
-Description: Create a new task.
-Payload: Task object
-Response: Newly created Task object with ID.
+ Description: Create a new task.
+ Payload: Task object
+ Response: Newly created Task object with ID.
 
 ## Work Breakdown: Development Phase
 For the task management dashboard project, the development phase can be organized by components, with specific tasks for creating each component, integration, and code review. This breakdown will ensure a structured approach to developing the application. Note that this covers only the development phase; subsequent phases like testing, UI/UX evaluation, deployment, and maintenance are not included.
