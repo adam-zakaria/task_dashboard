@@ -4,7 +4,9 @@ import TaskList from './TaskList';
 import { Grid } from '@mui/material';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Card, CardContent, Button, Typography } from '@mui/material';
+import { AppBar, Toolbar, Card, CardContent, Button, Typography } from '@mui/material';
+import AssignmentIcon from '@mui/icons-material/Assignment'; // An example icon
+
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -20,20 +22,25 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <Box sx={{ flexGrow: 1, padding: 4 }}>
-        <Typography variant="h3" component="h1" gutterBottom className="mb-6">
-          Task Dashboard
-        </Typography>
+      <AppBar position="static">
+        <Toolbar>
+          <AssignmentIcon sx={{ mr: 2 }} />
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Task Dashboard
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Box sx={{ flexGrow: 1, padding: 3 }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <Card>
+            <Card raised>
               <CardContent>
                 <TaskForm onTaskCreate={handleTaskCreate} />
               </CardContent>
             </Card>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Card style={{ height: 'calc(100vh - 96px)', overflow: 'auto' }}> {/* Adjust height as needed */}
+            <Card raised style={{ height: 'calc(100vh - 64px)', overflowY: 'auto' }}>
               <CardContent>
                 <TaskList tasks={tasks} />
               </CardContent>

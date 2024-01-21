@@ -4,6 +4,7 @@ import TaskDetail from './TaskDetail';
 
 function TaskList({ tasks }) {
   const [displayedDetails, setDisplayedDetails] = useState({});
+  const labelStyle = { color: '#757575' }; // Light gray color
 
   const toggleTaskDetail = (id) => {
     setDisplayedDetails(prevDetails => ({
@@ -14,18 +15,32 @@ function TaskList({ tasks }) {
 
   return (
     <div className="flex flex-col items-center">
-      <Typography variant="h4" component="h1" className="my-4">
-        Tasks
-      </Typography>
-      <div className="w-full md:w-2/3 lg:w-1/2">
+<Typography
+  variant="h4"
+  component="h1"
+  className="my-4"
+  sx={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}
+>
+  Tasks
+</Typography>
+      <div className="w-full">
         {tasks.map(task => (
-          <Card key={task.id} className="mb-4">
+          <Card onClick={() => toggleTaskDetail(task.id)} key={task.id} className="mb-4" elevation={1}>
             <CardContent className="cursor-pointer">
-              <Typography variant="h5" component="h3" onClick={() => toggleTaskDetail(task.id)}>
-                Task Name: {task.name}
+              <Typography
+                variant="h5"
+                component="h3"
+                sx={{ fontWeight: 'bold' }}
+              >
+                {task.name}
               </Typography>
-              <Typography variant="body1">Due Date: {task.dueDate}</Typography>
-              <Typography variant="body1">Priority: {task.priority}</Typography>
+              <Typography variant="body1">
+        <span style={labelStyle}>Due:</span> {task.dueDate}
+      </Typography>
+      <Typography variant="body1">
+        <span style={labelStyle}>Priority:</span> {task.priority}
+      </Typography>
+
               {displayedDetails[task.id] && <TaskDetail task={task} />}
             </CardContent>
           </Card>
