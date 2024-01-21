@@ -9,24 +9,30 @@ describe('TaskForm', () => {
     render(<TaskForm onTaskCreate={handleTaskCreate} />);
 
     // Fill out the form
-    fireEvent.change(screen.getByLabelText(/Task Name:/i), {
+    fireEvent.change(screen.getByRole('textbox', { name: /Task Name/i }), {
       target: { value: 'New Task' },
     });
-    fireEvent.change(screen.getByLabelText(/Description:/i), {
+    fireEvent.change(screen.getByRole('textbox', { name: /Description/i }), {
       target: { value: 'Task description' },
     });
-    fireEvent.change(screen.getByLabelText(/Due Date:/i), {
+    fireEvent.change(screen.getByLabelText(/Due Date/i), {
       target: { value: '2024-01-01' },
     });
-    fireEvent.change(screen.getByLabelText(/Assignee:/i), {
+    fireEvent.change(screen.getByRole('textbox', { name: /Assignee/i }), {
       target: { value: 'John Doe' },
     });
-    fireEvent.change(screen.getByLabelText(/Priority:/i), {
-      target: { value: 'High' },
-    });
+
+    // For Material-UI Select, we need to first open the dropdown before selecting an item
+    fireEvent.mouseDown(screen.getByLabelText(/Priority/i));
+    const listbox = screen.getByRole('listbox');
+    fireEvent.click(screen.getByText(/High/i, listbox));
+
+    fireEvent.mouseDown(screen.getByLabelText(/Status/i));
+    const statusListbox = screen.getByRole('listbox');
+    fireEvent.click(screen.getByText(/In Progress/i, statusListbox));
 
     // Submit the form
-    fireEvent.click(screen.getByText(/Create Task/i));
+    fireEvent.click(screen.getByRole('button', { name: /Create/i }));
 
     // Check if handleTaskCreate was called with the right data
     expect(handleTaskCreate).toHaveBeenCalledWith({
@@ -35,6 +41,7 @@ describe('TaskForm', () => {
       dueDate: '2024-01-01',
       assignee: 'John Doe',
       priority: 'High',
+      status: 'In Progress',
     });
   });
 });
